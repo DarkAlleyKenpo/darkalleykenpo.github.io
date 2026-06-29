@@ -2,38 +2,53 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://darkalleykenpo.com/techniques/1stblack/</loc>
+    <loc>http://localhost:1313/techniques/black4/</loc>
+    <lastmod>2026-03-01T20:54:00-07:00</lastmod>
   </url><url>
-    <loc>https://darkalleykenpo.com/techniques/1stbrown/</loc>
+    <loc>http://localhost:1313/</loc>
+    <lastmod>2026-03-01T20:54:00-07:00</lastmod>
   </url><url>
-    <loc>https://darkalleykenpo.com/techniques/2ndblack/</loc>
+    <loc>http://localhost:1313/techniques/</loc>
+    <lastmod>2026-03-01T20:54:00-07:00</lastmod>
   </url><url>
-    <loc>https://darkalleykenpo.com/techniques/2ndbrown/</loc>
+    <loc>http://localhost:1313/techniques/black3/</loc>
+    <lastmod>2026-03-01T20:53:54-07:00</lastmod>
   </url><url>
-    <loc>https://darkalleykenpo.com/techniques/3rdblack/</loc>
+    <loc>http://localhost:1313/techniques/black2/</loc>
+    <lastmod>2026-03-01T20:53:52-07:00</lastmod>
   </url><url>
-    <loc>https://darkalleykenpo.com/techniques/3rdbrown/</loc>
+    <loc>http://localhost:1313/techniques/black1/</loc>
+    <lastmod>2026-03-01T20:53:48-07:00</lastmod>
   </url><url>
-    <loc>https://darkalleykenpo.com/about/</loc>
+    <loc>http://localhost:1313/techniques/brown1/</loc>
+    <lastmod>2026-03-01T20:53:42-07:00</lastmod>
   </url><url>
-    <loc>https://darkalleykenpo.com/techniques/blue/</loc>
+    <loc>http://localhost:1313/techniques/brown2/</loc>
+    <lastmod>2026-03-01T20:53:36-07:00</lastmod>
   </url><url>
-    <loc>https://darkalleykenpo.com/categories/</loc>
+    <loc>http://localhost:1313/techniques/brown3/</loc>
+    <lastmod>2026-03-01T20:53:32-07:00</lastmod>
   </url><url>
-    <loc>https://darkalleykenpo.com/</loc>
+    <loc>http://localhost:1313/techniques/green/</loc>
+    <lastmod>2026-03-01T20:53:25-07:00</lastmod>
   </url><url>
-    <loc>https://darkalleykenpo.com/techniques/green/</loc>
+    <loc>http://localhost:1313/techniques/blue/</loc>
+    <lastmod>2026-03-01T20:53:15-07:00</lastmod>
   </url><url>
-    <loc>https://darkalleykenpo.com/website/</loc>
+    <loc>http://localhost:1313/techniques/purple/</loc>
+    <lastmod>2026-03-01T20:53:07-07:00</lastmod>
   </url><url>
-    <loc>https://darkalleykenpo.com/techniques/orange/</loc>
+    <loc>http://localhost:1313/techniques/orange/</loc>
+    <lastmod>2026-03-01T20:52:38-07:00</lastmod>
   </url><url>
-    <loc>https://darkalleykenpo.com/techniques/purple/</loc>
+    <loc>http://localhost:1313/techniques/yellow/</loc>
+    <lastmod>2026-03-01T20:52:21-07:00</lastmod>
   </url><url>
-    <loc>https://darkalleykenpo.com/tags/</loc>
+    <loc>http://localhost:1313/about/</loc>
+    <lastmod>2026-03-01T18:41:15-07:00</lastmod>
   </url><url>
-    <loc>https://darkalleykenpo.com/techniques/</loc>
+    <loc>http://localhost:1313/categories/</loc>
   </url><url>
-    <loc>https://darkalleykenpo.com/techniques/yellow/</loc>
+    <loc>http://localhost:1313/tags/</loc>
   </url>
 </urlset>

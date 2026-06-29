@@ -28,9 +28,9 @@ collections:
       - { label: 'Title', name: 'title', widget: 'string' }
       - { label: 'Publish Date', name: 'date', widget: 'datetime' }
       - { label: 'Description', name: 'description', widget: 'string' }
-  - name: 'posts'
-    label: 'Posts'
-    folder: 'content/posts'
+  - name: 'techniques'
+    label: 'Techniques'
+    folder: 'content/techniques'
     create: true
     slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
     editor:
@@ -40,3 +40,15 @@ collections:
       - { label: 'Publish Date', name: 'date', widget: 'datetime' }
       - { label: 'Description', name: 'description', widget: 'string' }
       - { label: 'Body', name: 'body', widget: 'markdown' }
+  # - name: 'posts'
+  #   label: 'Posts'
+  #   folder: 'content/posts'
+  #   create: true
+  #   slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
+  #   editor:
+  #     preview: false
+  #   fields:
+  #     - { label: 'Title', name: 'title', widget: 'string' }
+  #     - { label: 'Publish Date', name: 'date', widget: 'datetime' }
+  #     - { label: 'Description', name: 'description', widget: 'string' }
+  #     - { label: 'Body', name: 'body', widget: 'markdown' }

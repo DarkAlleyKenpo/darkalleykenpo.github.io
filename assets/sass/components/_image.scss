@@ -64,9 +64,9 @@
 		}
 
 		&.main {
-			display: block;
-			margin: (_size(element-margin) * 1.25) 0;
-			width: 100%;
+			display: inline;
+			width: 10%;
+			float: right;
 
 			img {
 				width: 100%;

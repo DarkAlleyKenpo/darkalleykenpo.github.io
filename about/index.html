@@ -1,16 +1,15 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>about</title>
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <title>About</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-    <link rel="icon" type="image/ico" href="images/favicon.ico" />
-    <link rel="stylesheet" href="https://darkalleykenpo.com/assets/css/main.css"/>
-    <link rel="canonical" href="https://darkalleykenpo.com/about/">
-    <noscript><link rel="stylesheet" href="https://darkalleykenpo.com/assets/css/noscript.css"/></noscript>
+    <link rel="stylesheet" href="/assets/css/main.css"/>
+    <link rel="canonical" href="http://localhost:1313/about/">
+    <noscript><link rel="stylesheet" href="/assets/css/noscript.css"/></noscript>
     <style>
-        :root{--site-background : url("https://darkalleykenpo.com/images/bg.jpg")};
-    </style> 
+        :root{--site-background : url("/images/bg.jpg")};
+    </style>
     
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
@@ -19,50 +18,62 @@
 <body class="is-preload">
 
     
-    <div id="wrapper">
+        <div id="wrapper">
 
-        
-        <header id="header">
-            <div class="logo">
-                <a href="/techniques">
-                    <span class="icon">
-                        <img src="">
-                    </span>
-                </a>
-            </div>
-            <div class="content">
-                <div class="inner">
-                    
+            
+                <header id="header">
+                    <div class="logo">
+                        <span class="icon fa-gem"></span>
+                    </div>
+                    <div class="content">
+                        <div class="inner">
+                            <h1><a href="/">Go Home</a></h1>
+                            <p>
+                                Nothing to see here
+                            </p>
+                        </div>
+                    </div>
+                </header>
 
-  <article id="about">
-    <span class="image main"><img src="" alt="" /></span>
-    <h2 class="major">about</h2>
-    
-    </ol>
-  </article>
-
-                </div>
-            </div>
-        </header>
-
-        
+                
 <footer id="footer">
-    <p class="copyright">&copy; Content: Chris Deluca :: Design: <a href="https://github.com/d-asnaghi">d-asnaghi</a> and <a href="https://html5up.net">HTML5 UP</a>.</p>
+    <p class="copyright">&copy; Design: <a href="https://github.com/d-asnaghi">d-asnaghi</a> and <a href="https://html5up.net">HTML5 UP</a>.</p>
 </footer>
 
-    </div>
+        </div>
 
     
     <div id="bg"></div>
+
 </body>
 
 
     
+    <div id="video-popup-overlay" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.85);z-index:10000;align-items:center;justify-content:center;cursor:pointer" onclick="closeVideoPopup()">
+        <div style="position:relative;width:80vw;max-width:960px;aspect-ratio:16/9;cursor:default" onclick="event.stopPropagation()">
+            <iframe id="video-popup-iframe" src="" style="width:100%;height:100%;border:none;border-radius:4px" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen></iframe>
+            <span onclick="closeVideoPopup()" style="position:absolute;top:-2rem;right:0;color:#fff;font-size:1.5rem;cursor:pointer;line-height:1">&times;</span>
+        </div>
+    </div>
+    <script>
+    function openVideoPopup(id) {
+        var overlay = document.getElementById('video-popup-overlay');
+        document.getElementById('video-popup-iframe').src = 'https://www.youtube-nocookie.com/embed/' + encodeURIComponent(id) + '?autoplay=1';
+        overlay.style.display = 'flex';
+    }
+    function closeVideoPopup() {
+        var overlay = document.getElementById('video-popup-overlay');
+        overlay.style.display = 'none';
+        document.getElementById('video-popup-iframe').src = '';
+    }
+    document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeVideoPopup(); });
+    </script>
+
     
-    <script src=https://darkalleykenpo.com/assets/js/jquery.min.js></script>
-    <script src=https://darkalleykenpo.com/assets/js/browser.min.js></script>
-    <script src=https://darkalleykenpo.com/assets/js/breakpoints.min.js></script>
-    <script src=https://darkalleykenpo.com/assets/js/util.js></script>
-    <script src=https://darkalleykenpo.com/assets/js/main.js></script>
+    <script src=/assets/js/jquery.min.js></script>
+    <script src=/assets/js/browser.min.js></script>
+    <script src=/assets/js/breakpoints.min.js></script>
+    <script src=/assets/js/util.js></script>
+    <script src=/assets/js/main.js></script>
 
 </html>

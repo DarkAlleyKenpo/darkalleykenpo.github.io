@@ -76,6 +76,81 @@
 					}
 				}
 			}
+
+			.technique-heading {
+				@include vendor('display', 'flex');
+				@include vendor('align-items', 'flex-start');
+				@include vendor('justify-content', 'space-between');
+				gap: 1rem;
+				margin: 0 0 _size(element-margin) 0;
+
+				.major {
+					margin: 0;
+				}
+
+				.technique-image {
+					display: block;
+					width: 10%;
+					float: none;
+					margin: 0;
+					@include vendor('flex', '0 0 10%');
+				}
+			}
+
+			&.technique-article {
+				> ol {
+					margin: 0 0 1rem 0;
+					padding-left: 2.2em;
+					list-style: none;
+					counter-reset: technique-parent;
+				}
+
+				ol {
+					margin: 0.3rem 0 0.65rem 0;
+					padding-left: 1.2em;
+				}
+
+				> ol > li {
+					counter-increment: technique-parent;
+					margin-bottom: 0.18rem;
+					position: relative;
+				}
+
+				> ol > li:before {
+					content: counter(technique-parent) '. ';
+					position: absolute;
+					left: -2.2em;
+					width: 2em;
+					text-align: right;
+				}
+
+				li > ol {
+					margin-top: 0.2rem;
+					margin-bottom: 0.4rem;
+					list-style: none;
+					counter-reset: technique-child;
+					padding-left: 2.2em;
+				}
+
+				li > ol > li {
+					counter-increment: technique-child;
+					margin-bottom: 0.03rem;
+					position: relative;
+				}
+
+				li > ol > li:before {
+					content: counter(technique-child, lower-alpha) '. ';
+					position: absolute;
+					left: -2.2em;
+					width: 2em;
+					text-align: right;
+				}
+
+				> ol > li:last-child,
+				li > ol > li:last-child {
+					margin-bottom: 0;
+				}
+			}
 		}
 
 		@include breakpoint('<=small') {

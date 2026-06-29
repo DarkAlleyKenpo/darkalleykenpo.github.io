@@ -153,6 +153,32 @@
 			}
 		}
 
+		// Shared belt-rank nav behavior. Breakpoints below only change column math.
+		nav.belt-ranks-nav {
+			ul {
+				@include vendor('flex-wrap', 'wrap');
+				min-width: 0;
+				max-width: 100%;
+				margin-left: auto;
+				margin-right: auto;
+			}
+
+			ul li a {
+				min-width: 0;
+				width: 100%;
+			}
+
+			&.use-middle {
+				&:after {
+					display: none;
+				}
+
+				ul li.is-middle {
+					border-left: solid _size(border-width) _palette(border);
+				}
+			}
+		}
+
 		body.is-article-visible & {
 			@include vendor('transform', 'scale(0.95)');
 			@include vendor('filter', 'blur(0.1rem)');
@@ -176,12 +202,61 @@
 			}
 		}
 
+		// Two-row layout at wider tablet/laptop widths to prevent edge clipping.
+		@media screen and (max-width: 2000px) {
+			nav.belt-ranks-nav {
+				ul {
+					width: min(100%, 52rem);
+				}
+
+				ul li {
+					width: 16.6667%;
+					border-top: solid _size(border-width) _palette(border);
+				}
+
+				ul li:nth-child(6n+1) {
+					border-left: 0;
+				}
+
+				ul li:nth-child(-n+6) {
+					border-top: 0;
+				}
+			}
+		}
+
 		@include breakpoint('<=medium') {
 			.content {
 				p {
 					br {
 						display: none;
 					}
+				}
+			}
+
+			nav.belt-ranks-nav {
+				ul {
+					width: min(100%, 42rem);
+				}
+
+				ul li {
+					width: 25%;
+					border-top: solid _size(border-width) _palette(border);
+				}
+
+				ul li:nth-child(6n+1) {
+					border-left: solid _size(border-width) _palette(border);
+				}
+
+				ul li:nth-child(-n+6) {
+					border-top: solid _size(border-width) _palette(border);
+				}
+
+				ul li:nth-child(4n+1) {
+					border-left: 0;
+				}
+
+				ul li:nth-child(-n+4) {
+					border-top: 0;
 				}
 			}
 		}
@@ -215,6 +290,14 @@
 
 				p {
 					line-height: 1.875;
+				}
+			}
+
+			nav.belt-ranks-nav {
+				ul li a {
+					padding: 0 0.45rem;
+					letter-spacing: 0.06rem;
+					font-size: 0.7rem;
 				}
 			}
 		}
@@ -255,6 +338,49 @@
 					&:after {
 						display: none;
 					}
+				}
+			}
+
+			nav.belt-ranks-nav {
+				ul {
+					@include vendor('flex-direction', 'row');
+					min-width: 0;
+				}
+
+				ul li {
+					width: 33.3333%;
+					border-left: solid _size(border-width) _palette(border);
+					border-top: solid _size(border-width) _palette(border);
+				}
+
+				ul li:nth-child(6n+1) {
+					border-left: solid _size(border-width) _palette(border);
+				}
+
+				ul li:nth-child(-n+6) {
+					border-top: solid _size(border-width) _palette(border);
+				}
+
+				ul li:nth-child(4n+1) {
+					border-left: solid _size(border-width) _palette(border);
+				}
+
+				ul li:nth-child(-n+4) {
+					border-top: solid _size(border-width) _palette(border);
+				}
+
+				ul li:nth-child(3n+1) {
+					border-left: 0;
+				}
+
+				ul li:nth-child(-n+3) {
+					border-top: 0;
+				}
+
+				ul li a {
+					height: 3rem;
+					line-height: 3rem;
+					font-size: 0.68rem;
 				}
 			}
 		}
