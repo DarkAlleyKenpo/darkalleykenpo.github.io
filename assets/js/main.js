@@ -316,6 +316,24 @@
 			});
 
 		// Events.
+			document.addEventListener('click', function(event) {
+
+				var closeEl = event.target && event.target.closest ? event.target.closest('#main article .close') : null;
+
+				if (!closeEl)
+					return;
+
+				event.preventDefault();
+				event.stopPropagation();
+
+				if (typeof closeVideoPopup === 'function')
+					closeVideoPopup();
+
+				$main._hide(true);
+				nohash = true;
+
+			}, true);
+
 			$body.on('click', function(event) {
 
 				// Article visible? Go back. Hide when article is accessed first.
