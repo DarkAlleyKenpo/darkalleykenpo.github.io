@@ -1380,6 +1380,28 @@ input, select, textarea {
 			padding-right: 1rem;
 		}
 
+		.search-intro {
+			max-width: 40rem;
+			margin: 0 auto 1.5rem;
+			text-transform: uppercase;
+			letter-spacing: 0.2rem;
+			font-size: 0.72rem;
+			opacity: 0.8;
+		}
+
+		.search-pagefind {
+			max-width: 48rem;
+			margin: 0 auto;
+		}
+
+		.search-pagefind-status {
+			text-align: center;
+			text-transform: uppercase;
+			letter-spacing: 0.2rem;
+			font-size: 0.72rem;
+			opacity: 0.75;
+		}
+
 			#header nav ul li {
 				padding-left: 0;
 				border-left: solid 1px #ffffff;
@@ -1438,6 +1460,94 @@ input, select, textarea {
 		#header nav.belt-ranks-nav ul li a {
 			min-width: 0;
 			width: 100%;
+		}
+
+		#header nav.belt-ranks-nav.belt-icons-nav {
+			display: block;
+			width: min(calc(100vw - 2rem), 64rem);
+			max-width: 64rem;
+		}
+
+		#header nav.belt-ranks-nav.belt-icons-nav ul {
+			border: 0;
+			border-radius: 0;
+			margin: 0 auto;
+			padding: 0.15rem 0.1rem;
+			max-width: 100%;
+			width: 100%;
+			flex-wrap: nowrap;
+			overflow-x: auto;
+			overflow-y: hidden;
+			gap: 0.35rem;
+		}
+
+		#header nav.belt-ranks-nav.belt-icons-nav ul li {
+			width: auto !important;
+			border: 0 !important;
+			padding-left: 0;
+			flex: 0 0 auto;
+		}
+
+		#header nav.belt-ranks-nav.belt-icons-nav ul li.nav-search-icon {
+			margin-left: auto;
+		}
+
+		#header nav.belt-ranks-nav.belt-icons-nav ul li a {
+			width: 2.75rem;
+			height: 2.75rem;
+			min-width: 0;
+			line-height: normal;
+			padding: 0;
+			letter-spacing: 0;
+			border: solid 1px #ffffff;
+			border-radius: 999px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+
+		#header nav.belt-ranks-nav.belt-icons-nav ul li.nav-belt-icon a img {
+			display: block;
+			width: 1.72rem;
+			height: 1.72rem;
+			object-fit: contain;
+		}
+
+		#header nav.belt-ranks-nav.belt-icons-nav ul li.nav-home-icon a,
+		#header nav.belt-ranks-nav.belt-icons-nav ul li.nav-search-icon a {
+			font-size: 1rem;
+		}
+
+		#header .techniques-search-link {
+			margin: 0.9rem auto 0;
+			text-align: center;
+		}
+
+		#header .techniques-search-link:before {
+			top: calc(-0.9rem - 1px);
+			height: calc(0.9rem + 1px);
+		}
+
+		#header .techniques-search-link a {
+			display: inline-block;
+			min-width: 8.5rem;
+			height: 2.3rem;
+			line-height: 2.3rem;
+			padding: 0 1.1rem;
+			text-transform: uppercase;
+			letter-spacing: 0.2rem;
+			font-size: 0.75rem;
+			border: solid 1px #ffffff;
+			border-radius: 4px;
+			text-decoration: none;
+		}
+
+		#header .techniques-search-link a:hover {
+			background-color: rgba(255, 255, 255, 0.075);
+		}
+
+		#header .techniques-search-link a:active {
+			background-color: rgba(255, 255, 255, 0.175);
 		}
 
 		#header nav.belt-ranks-nav.use-middle:after {
@@ -1565,6 +1675,20 @@ input, select, textarea {
 				padding: 0 0.45rem;
 				letter-spacing: 0.06rem;
 				font-size: 0.7rem;
+			}
+
+			#header nav.belt-ranks-nav.belt-icons-nav ul {
+				gap: 0.25rem;
+			}
+
+			#header nav.belt-ranks-nav.belt-icons-nav ul li a {
+				width: 2.25rem;
+				height: 2.25rem;
+			}
+
+			#header nav.belt-ranks-nav.belt-icons-nav ul li.nav-belt-icon a img {
+				width: 1.38rem;
+				height: 1.38rem;
 			}
 
 		}
@@ -1757,20 +1881,27 @@ input, select, textarea {
 					display: -webkit-flex;
 					display: -ms-flex;
 					display: flex;
-					-moz-align-items: flex-start;
-					-webkit-align-items: flex-start;
-					-ms-align-items: flex-start;
-					align-items: flex-start;
-					-moz-justify-content: space-between;
-					-webkit-justify-content: space-between;
-					-ms-justify-content: space-between;
-					justify-content: space-between;
-					gap: 1rem;
-					margin: 0 0 2rem 0;
-				}
+						-moz-align-items: flex-start;
+						-webkit-align-items: flex-start;
+						-ms-align-items: flex-start;
+						align-items: flex-start;
+						-moz-justify-content: space-between;
+						-webkit-justify-content: space-between;
+						-ms-justify-content: space-between;
+						justify-content: space-between;
+						gap: 1rem;
+						margin: 0 0 2rem 0;
+					}
 
-					#main article .technique-heading .major {
-						margin: 0;
+				body:not(.karate-variant) #main article .technique-heading {
+						-moz-flex-direction: row-reverse;
+						-webkit-flex-direction: row-reverse;
+						-ms-flex-direction: row-reverse;
+						flex-direction: row-reverse;
+						-moz-justify-content: flex-end;
+						-webkit-justify-content: flex-end;
+						-ms-justify-content: flex-end;
+						justify-content: flex-end;
 					}
 
 					#main article .technique-heading .technique-image {
@@ -1794,11 +1925,20 @@ input, select, textarea {
 
 				#main article.technique-article .youtube-popup-link {
 					color: #4da6ff;
-					margin-left: 0.4em;
+					margin-left: 0.75em;
 				}
 
 				#main article.technique-article .youtube-popup-link:hover {
 					color: #80c0ff;
+				}
+
+				#main article.technique-article h3 {
+					margin: 1.25rem 0 0.35rem 0;
+					line-height: 1.35;
+				}
+
+				#main article.technique-article .technique-heading + h3 {
+					margin-top: 0.5rem;
 				}
 
 				#main article.technique-article > ol {

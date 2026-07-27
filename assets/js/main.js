@@ -202,6 +202,97 @@
 
 			};
 
+			function resolveHashTarget(hash) {
+
+				if (!hash || hash == '#' || hash.charAt(0) != '#')
+					return null;
+
+				var fragment = hash.substr(1);
+				var article = $main_articles.filter('#' + fragment);
+
+				if (article.length > 0)
+					return {
+						articleId: fragment,
+						targetId: null
+					};
+
+				var target = document.getElementById(fragment);
+				if (!target)
+					return null;
+
+				article = target.closest ? target.closest('article') : null;
+				if (!article || !$main[0].contains(article))
+					return null;
+
+				return {
+					articleId: article.id,
+					targetId: fragment
+				};
+
+			}
+
+			function showHashTarget(hash, initial) {
+
+				var target = resolveHashTarget(hash);
+
+				if (!target)
+					return false;
+
+				$main._show(target.articleId, initial);
+
+				var focusTarget = target.targetId || (function() {
+					try {
+						return new URL(window.location.href).searchParams.get('focus') || '';
+					} catch (error) {
+						return '';
+					}
+				})();
+
+				if (focusTarget) {
+					var scrollFocus = function() {
+						var element = null;
+						var article = $main_articles.filter('#' + target.articleId)[0];
+						var prefixed = null;
+
+						if (article && article.querySelector)
+							element = article.querySelector('[id="' + focusTarget.replace(/"/g, '\\"') + '"]');
+
+						if (!element && article && article.querySelectorAll) {
+							prefixed = Array.prototype.find.call(article.querySelectorAll('[id]'), function(node) {
+								return node.id && node.id.indexOf(focusTarget + '-') === 0;
+							});
+
+							if (prefixed)
+								element = prefixed;
+						}
+
+						if (!element)
+							element = document.getElementById(focusTarget);
+
+						if (element && element.scrollIntoView)
+							element.scrollIntoView({ block: 'start' });
+					};
+
+					scrollFocus();
+					window.setTimeout(scrollFocus, initial ? 650 : 250);
+				}
+
+				return true;
+
+			}
+
+			function tryInitialHashTarget(attempt) {
+
+				if (showHashTarget(location.hash, true))
+					return;
+
+				if (attempt < 10)
+					window.setTimeout(function() {
+						tryInitialHashTarget(attempt + 1);
+					}, 100);
+
+			}
+
 			$main._hide = function(addState) {
 
 				var $article = $main_articles.filter('.active');
@@ -383,14 +474,11 @@
 					}
 
 				// Otherwise, check for a matching article.
-					else if ($main_articles.filter(location.hash).length > 0) {
+					else if (showHashTarget(location.hash)) {
 
 						// Prevent default.
 							event.preventDefault();
 							event.stopPropagation();
-
-						// Show article.
-							$main._show(location.hash.substr(1));
 
 					}
 
@@ -428,8 +516,6 @@
 			// Initial article.
 				if (location.hash != ''
 				&&	location.hash != '#')
-					$window.on('load', function() {
-						$main._show(location.hash.substr(1), true);
-					});
+					tryInitialHashTarget(0);
 
 })(jQuery);

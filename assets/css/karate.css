@@ -1,0 +1,515 @@
+.karate-variant {
+	--karate-ink: #0c0e10;
+	--karate-paper: #ece7dd;
+	--karate-paper-soft: #f7f4ee;
+	--karate-accent: #b33a14;
+	--karate-accent-deep: #7d2308;
+	--karate-edge: #2f3134;
+	--karate-muted: #655f56;
+	background:
+		radial-gradient(circle at 12% 10%, rgba(255, 166, 104, 0.16) 0, rgba(255, 166, 104, 0) 42%),
+		radial-gradient(circle at 90% 5%, rgba(179, 58, 20, 0.2) 0, rgba(179, 58, 20, 0) 38%),
+		repeating-linear-gradient(145deg, #0e1013 0, #0e1013 18px, #111419 18px, #111419 36px);
+	color: var(--karate-paper);
+}
+
+.karate-variant,
+.karate-variant input,
+.karate-variant select,
+.karate-variant textarea {
+	font-family: "Arial Narrow", "Helvetica Neue", Arial, sans-serif;
+	color: var(--karate-paper);
+}
+
+.karate-variant #bg,
+.karate-variant #bg:before {
+	display: none;
+}
+
+.karate-variant #wrapper {
+	justify-content: flex-start;
+	gap: 1.75rem;
+	padding: 2.5rem clamp(0.75rem, 1.6vw, 2rem);
+	max-width: min(96vw, 1800px);
+	width: 100%;
+	margin: 0 auto;
+}
+
+.karate-variant #header {
+	width: 100%;
+	max-width: 100%;
+	text-align: left;
+	align-items: stretch;
+	background: linear-gradient(120deg, rgba(10, 11, 12, 0.92), rgba(20, 24, 30, 0.9));
+	border: 1px solid rgba(236, 231, 221, 0.3);
+	border-left: 0.6rem solid var(--karate-accent);
+	border-radius: 0.5rem;
+	overflow: hidden;
+	box-shadow: 0 1.4rem 3rem rgba(0, 0, 0, 0.45);
+	animation: karate-slide-in 0.7s ease-out;
+	background-image: none;
+}
+
+.karate-variant #header > * {
+	margin-top: 0;
+	padding: 1.1rem 1.25rem;
+}
+
+.karate-variant #header > *:before {
+	display: none;
+}
+
+.karate-variant #header .logo {
+	width: 4.2rem;
+	height: 4.2rem;
+	line-height: 4.2rem;
+	border: 2px solid rgba(236, 231, 221, 0.5);
+	border-radius: 0.3rem;
+	transform: rotate(-4deg);
+	background: rgba(125, 35, 8, 0.35);
+	align-self: flex-start;
+	margin: 1.1rem 0 0 1.25rem;
+	padding: 0;
+}
+
+.karate-variant #header .logo a {
+	display: flex;
+	width: 100%;
+	height: 100%;
+	align-items: center;
+	justify-content: center;
+}
+
+.karate-variant #header .content {
+	border: 0;
+	background: transparent;
+	padding-top: 0.15rem;
+	padding-bottom: 1.25rem;
+}
+
+.karate-variant #header .content .inner {
+	padding: 0;
+	max-height: none;
+	overflow: visible;
+}
+
+.karate-variant #header .content h1 {
+	font-family: Impact, "Arial Narrow", "Franklin Gothic Medium", sans-serif;
+	font-size: clamp(2.3rem, 8vw, 4.8rem);
+	line-height: 0.95;
+	letter-spacing: 0.1rem;
+	text-transform: uppercase;
+	color: var(--karate-paper);
+	text-shadow: 0.12rem 0.12rem 0 var(--karate-accent-deep);
+	margin-bottom: 0.65rem;
+	position: relative;
+	display: inline-block;
+}
+
+.karate-variant #header .content h1:after {
+	content: "";
+	position: absolute;
+	left: 0;
+	bottom: -0.2rem;
+	width: 88%;
+	height: 0.28rem;
+	background: linear-gradient(90deg, var(--karate-accent), rgba(179, 58, 20, 0));
+}
+
+.karate-variant #header .content p {
+	margin: 0;
+	font-family: Georgia, "Times New Roman", serif;
+	font-size: 1.02rem;
+	line-height: 1.55;
+	letter-spacing: 0.02rem;
+	text-transform: none;
+	max-width: 68ch;
+	color: rgba(236, 231, 221, 0.92);
+}
+
+.karate-variant #header nav.belt-ranks-nav.belt-icons-nav {
+	width: 100%;
+	max-width: 100%;
+	padding: 0.35rem 1.1rem 1.2rem;
+}
+
+.karate-variant #header nav.belt-ranks-nav.belt-icons-nav ul {
+	border: 0;
+	padding: 0.28rem 0.85rem;
+	gap: 0.55rem;
+	row-gap: 0.55rem;
+	flex-wrap: wrap;
+	overflow-x: visible;
+	overflow-y: visible;
+	scrollbar-width: thin;
+	justify-content: flex-start;
+}
+
+.karate-variant #header nav.belt-ranks-nav.belt-icons-nav ul li.nav-search-icon {
+	margin-left: 0 !important;
+	margin-right: 0.45rem !important;
+}
+
+.karate-variant #header nav.belt-ranks-nav.belt-icons-nav ul li.nav-search-icon a {
+	transform-origin: right center;
+}
+
+.karate-variant #header nav.belt-ranks-nav.belt-icons-nav ul li a {
+	width: 3.28rem;
+	height: 3.28rem;
+	border-radius: 0.4rem;
+	border: 1px solid rgba(236, 231, 221, 0.35);
+	background: linear-gradient(180deg, rgba(255, 255, 255, 0.1), rgba(12, 14, 16, 0.55));
+	backdrop-filter: blur(1.5px);
+	transition: transform 0.18s ease, background-color 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease;
+}
+
+.karate-variant #header nav.belt-ranks-nav.belt-icons-nav ul li a:hover {
+	transform: scale(1.06);
+	border-color: rgba(236, 231, 221, 0.72);
+	background: linear-gradient(180deg, rgba(179, 58, 20, 0.58), rgba(125, 35, 8, 0.78));
+	box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.35);
+	filter: saturate(1.08) brightness(1.03);
+}
+
+.karate-variant #header nav.belt-ranks-nav.belt-icons-nav ul li.nav-belt-icon a img {
+	width: 2rem;
+	height: 2rem;
+	filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.65));
+}
+
+.karate-variant #header nav.belt-ranks-nav.belt-icons-nav ul li.nav-home-icon a,
+.karate-variant #header nav.belt-ranks-nav.belt-icons-nav ul li.nav-search-icon a {
+	font-size: 1.1rem;
+	color: var(--karate-paper-soft);
+}
+
+.karate-variant #main {
+	width: 100%;
+	align-items: stretch;
+	justify-content: flex-start;
+	gap: 1.25rem;
+}
+
+.karate-variant #main article {
+	width: 100%;
+	max-width: 100%;
+	background: linear-gradient(180deg, var(--karate-paper-soft), var(--karate-paper));
+	color: var(--karate-ink);
+	border: 1px solid rgba(12, 14, 16, 0.23);
+	border-radius: 0.45rem;
+	padding: 3.4rem 2.15rem 1.5rem;
+	box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.24);
+	transform: translateY(0.65rem);
+	position: relative;
+	overflow: hidden;
+}
+
+.karate-variant #main article:before {
+	content: "";
+	position: absolute;
+	inset: 0 auto 0 0;
+	width: 0.45rem;
+	background: linear-gradient(180deg, var(--karate-accent), var(--karate-accent-deep));
+}
+
+.karate-variant #main article.active {
+	transform: translateY(0);
+	animation: karate-article-in 0.26s ease-out;
+}
+
+.karate-variant #main article h1,
+.karate-variant #main article h2,
+.karate-variant #main article h3,
+.karate-variant #main article h4,
+.karate-variant #main article h5,
+.karate-variant #main article h6,
+.karate-variant #main article strong,
+.karate-variant #main article b {
+	color: var(--karate-ink);
+}
+
+.karate-variant #main article h2.major {
+	font-family: Impact, "Arial Narrow", "Franklin Gothic Medium", sans-serif;
+	letter-spacing: 0.08rem;
+	font-size: clamp(2rem, 6vw, 3rem);
+	text-transform: uppercase;
+	border-bottom: 0;
+	margin: 0;
+	padding-right: 1rem;
+}
+
+.karate-variant #main article .technique-heading {
+	align-items: flex-start;
+	justify-content: flex-start;
+	margin-bottom: 1.45rem;
+	padding-bottom: 0.95rem;
+	padding-right: 1rem;
+	border-bottom: 1px solid rgba(47, 49, 52, 0.25);
+	gap: 1.2rem;
+}
+
+.karate-variant #main article .technique-heading .technique-image {
+	order: -1;
+	width: 3.65rem;
+	flex: 0 0 3.65rem;
+	margin: -0.2rem 0.45rem 0 0;
+	border-radius: 0.45rem;
+	background: linear-gradient(180deg, rgba(145, 140, 132, 0.97), rgba(115, 110, 104, 0.98));
+	border: 1px solid rgba(0, 0, 0, 0.18);
+	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.55), 0 6px 12px rgba(0, 0, 0, 0.28);
+	padding: 0.22rem;
+}
+
+.karate-variant #main article .technique-heading .technique-image img {
+	display: block;
+	width: 100%;
+	height: auto;
+	filter: saturate(1.14) contrast(1.08) drop-shadow(0 1px 1px rgba(0, 0, 0, 0.45));
+}
+
+.karate-variant #main article p,
+.karate-variant #main article li {
+	font-family: Georgia, "Times New Roman", serif;
+	font-size: 1.03rem;
+	line-height: 1.55;
+	letter-spacing: 0.01rem;
+}
+
+.karate-variant #main article a {
+	color: var(--karate-accent-deep);
+	border-bottom-color: rgba(125, 35, 8, 0.38);
+	font-weight: 600;
+}
+
+.karate-variant #main article a:hover {
+	color: #5e1a06;
+	border-bottom-color: transparent;
+}
+
+.karate-variant #main article .close:before {
+	background-color: rgba(12, 14, 16, 0.9);
+	border-radius: 0.35rem;
+}
+
+.karate-variant #main article .close:hover:before {
+	background-color: var(--karate-accent-deep);
+}
+
+.karate-variant .search-intro,
+.karate-variant .search-pagefind-status {
+	text-transform: none;
+	font-family: "Arial Narrow", "Helvetica Neue", Arial, sans-serif;
+	letter-spacing: 0.03rem;
+	font-size: 0.92rem;
+	opacity: 0.86;
+	color: var(--karate-muted);
+	text-align: left;
+	margin-left: 0;
+	margin-right: 0;
+	max-width: none;
+}
+
+.karate-variant .search-pagefind {
+	max-width: none;
+	margin: 0;
+}
+
+.karate-variant #footer .copyright {
+	color: rgba(236, 231, 221, 0.72);
+	letter-spacing: 0.08rem;
+	font-size: 0.66rem;
+	text-transform: none;
+	font-family: "Arial Narrow", "Helvetica Neue", Arial, sans-serif;
+}
+
+.karate-variant #footer {
+	margin-top: auto;
+	padding-top: 1rem;
+}
+
+/* Icon-strip only treatment for karate techniques landing. */
+.karate-variant #header.karate-icons-only {
+	max-width: 100%;
+	text-align: left;
+	align-items: stretch;
+	background: rgba(44, 50, 58, 0.4);
+	border: 1px solid rgba(245, 239, 228, 0.35);
+	border-radius: 0.7rem;
+	backdrop-filter: blur(2.5px);
+	box-shadow: 0 0.6rem 1.4rem rgba(0, 0, 0, 0.2);
+	animation: none;
+}
+
+.karate-variant #header.karate-icons-only nav.belt-ranks-nav.belt-icons-nav {
+	width: 100%;
+	max-width: 100%;
+	padding: 0.8rem 1rem;
+	margin: 0;
+	border: 0;
+}
+
+.karate-variant #header.karate-icons-only nav.belt-ranks-nav.belt-icons-nav:before {
+	display: none;
+}
+
+.karate-variant #header.karate-icons-only nav.belt-ranks-nav.belt-icons-nav ul {
+	border: 0;
+	padding: 0;
+	margin: 0;
+	gap: 0.52rem;
+	row-gap: 0.52rem;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	overflow: visible;
+}
+
+.karate-variant #header.karate-icons-only nav.belt-ranks-nav.belt-icons-nav ul li {
+	width: auto !important;
+	border: 0 !important;
+	flex: 0 0 auto;
+	padding-left: 0;
+}
+
+.karate-variant #header.karate-icons-only nav.belt-ranks-nav.belt-icons-nav ul li.nav-search-icon {
+	margin-left: auto !important;
+	margin-right: 0.1rem !important;
+}
+
+.karate-variant #header.karate-icons-only nav.belt-ranks-nav.belt-icons-nav ul li a {
+	width: 2.9rem;
+	height: 2.9rem;
+	min-width: 0;
+	padding: 0;
+	border-radius: 999px;
+	line-height: normal;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border: 1.2px solid rgba(252, 248, 242, 0.86);
+	background: rgba(84, 92, 104, 0.62);
+	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.28);
+	backdrop-filter: blur(1.5px);
+	transition: transform 0.18s ease, border-color 0.18s ease, background-color 0.18s ease;
+}
+
+.karate-variant #header.karate-icons-only nav.belt-ranks-nav.belt-icons-nav ul li a:hover {
+	transform: scale(1.05);
+	border-color: rgba(255, 255, 255, 0.9);
+	background: rgba(108, 117, 132, 0.76);
+	box-shadow: 0 0.45rem 0.9rem rgba(0, 0, 0, 0.26);
+}
+
+.karate-variant #header.karate-icons-only nav.belt-ranks-nav.belt-icons-nav ul li.nav-belt-icon a img {
+	width: 1.55rem;
+	height: 1.55rem;
+	object-fit: contain;
+	filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.48));
+}
+
+.karate-variant #header.karate-icons-only nav.belt-ranks-nav.belt-icons-nav ul li.nav-home-icon a,
+.karate-variant #header.karate-icons-only nav.belt-ranks-nav.belt-icons-nav ul li.nav-search-icon a {
+	font-size: 1rem;
+	color: #f4efe4;
+}
+
+@keyframes karate-slide-in {
+	from {
+		opacity: 0;
+		transform: translateY(18px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@keyframes karate-article-in {
+	from {
+		opacity: 0;
+		transform: translateY(10px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@media screen and (max-width: 980px) {
+	.karate-variant #wrapper {
+		padding-top: 1.2rem;
+		gap: 1.1rem;
+	}
+
+	.karate-variant #header .content h1 {
+		font-size: clamp(2rem, 11vw, 3.2rem);
+	}
+
+	.karate-variant #main article {
+		padding: 3rem 1.35rem 1.2rem;
+	}
+
+	.karate-variant #main article .technique-heading {
+		gap: 0.75rem;
+		padding-right: 0.75rem;
+	}
+
+	.karate-variant #main article .technique-heading .technique-image {
+		width: 3.25rem;
+		flex: 0 0 3.25rem;
+		margin: -0.1rem 0.3rem 0 0;
+	}
+}
+
+@media screen and (max-width: 736px) {
+	.karate-variant #header > * {
+		padding-left: 0.9rem;
+		padding-right: 0.9rem;
+	}
+
+	.karate-variant #header .logo {
+		width: 3.5rem;
+		height: 3.5rem;
+		line-height: 3.5rem;
+		margin-left: 0.9rem;
+	}
+
+	.karate-variant #header nav.belt-ranks-nav.belt-icons-nav {
+		padding-left: 0.9rem;
+		padding-right: 0.9rem;
+	}
+
+	.karate-variant #header nav.belt-ranks-nav.belt-icons-nav ul li a {
+		width: 2.8rem;
+		height: 2.8rem;
+	}
+
+	.karate-variant #header nav.belt-ranks-nav.belt-icons-nav ul li.nav-belt-icon a img {
+		width: 1.7rem;
+		height: 1.7rem;
+	}
+
+	.karate-variant #header.karate-icons-only nav.belt-ranks-nav.belt-icons-nav {
+		padding: 0.72rem 0.8rem;
+	}
+
+	.karate-variant #header.karate-icons-only nav.belt-ranks-nav.belt-icons-nav ul li a {
+		width: 2.58rem;
+		height: 2.58rem;
+	}
+
+	.karate-variant #header.karate-icons-only nav.belt-ranks-nav.belt-icons-nav ul li.nav-belt-icon a img {
+		width: 1.38rem;
+		height: 1.38rem;
+	}
+
+	.karate-variant #main article h2.major {
+		font-size: clamp(1.7rem, 8vw, 2.3rem);
+	}
+
+	.karate-variant #main article p,
+	.karate-variant #main article li {
+		font-size: 0.98rem;
+	}
+}
