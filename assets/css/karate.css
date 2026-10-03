@@ -178,6 +178,12 @@
 	filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.65));
 }
 
+.karate-variant #main article.technique-article h3,
+.karate-variant #main article.technique-article h3 a {
+	text-transform: none !important;
+	letter-spacing: normal !important;
+}
+
 .karate-variant #header nav.belt-ranks-nav.belt-icons-nav ul li.nav-home-icon a,
 .karate-variant #header nav.belt-ranks-nav.belt-icons-nav ul li.nav-search-icon a {
 	font-size: 1.1rem;

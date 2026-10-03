@@ -1937,6 +1937,12 @@ input, select, textarea {
 					line-height: 1.35;
 				}
 
+				#main article.technique-article h3,
+				#main article.technique-article h3 a {
+					text-transform: none !important;
+					letter-spacing: normal !important;
+				}
+
 				#main article.technique-article .technique-heading + h3 {
 					margin-top: 0.5rem;
 				}
