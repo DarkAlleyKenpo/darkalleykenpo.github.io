@@ -275,6 +275,9 @@
 
 					scrollFocus();
 					window.setTimeout(scrollFocus, initial ? 650 : (delay + 150));
+
+					if (!initial)
+						window.setTimeout(scrollFocus, (delay * 2) + 150);
 				}
 
 				return true;
