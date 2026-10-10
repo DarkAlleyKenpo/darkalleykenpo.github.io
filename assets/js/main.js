@@ -463,6 +463,9 @@
 
 			$body.on('click', function(event) {
 
+				if (event.target && event.target.closest && event.target.closest('#main'))
+					return;
+
 				// Article visible? Go back. Hide when article is accessed first.
 					if ($body.hasClass('is-article-visible')) {
 						if (nohash) {
