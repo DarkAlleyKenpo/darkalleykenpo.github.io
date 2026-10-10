@@ -274,7 +274,7 @@
 					};
 
 					scrollFocus();
-					window.setTimeout(scrollFocus, initial ? 650 : 250);
+					window.setTimeout(scrollFocus, initial ? 650 : (delay + 150));
 				}
 
 				return true;
