@@ -209,6 +209,9 @@
 
 				var fragment = hash.substr(1);
 				var article = $main_articles.filter('#' + fragment);
+				var normalizedFragment = String(fragment || '')
+					.replace(/-{2,}/g, '-')
+					.replace(/^-+|-+$/g, '');
 
 				if (article.length > 0)
 					return {
@@ -217,6 +220,19 @@
 					};
 
 				var target = document.getElementById(fragment);
+
+				if (!target && normalizedFragment)
+					target = Array.prototype.find.call(document.querySelectorAll('[id]'), function(node) {
+						if (!node.id)
+							return false;
+
+						var normalizedNodeId = node.id
+							.replace(/-{2,}/g, '-')
+							.replace(/^-+|-+$/g, '');
+
+						return normalizedNodeId === normalizedFragment;
+					}) || null;
+
 				if (!target)
 					return null;
 
@@ -253,13 +269,30 @@
 						var element = null;
 						var article = $main_articles.filter('#' + target.articleId)[0];
 						var prefixed = null;
+						var normalizedFocusTarget = String(focusTarget || '')
+							.replace(/-{2,}/g, '-')
+							.replace(/^-+|-+$/g, '');
 
 						if (article && article.querySelector)
 							element = article.querySelector('[id="' + focusTarget.replace(/"/g, '\\"') + '"]');
 
 						if (!element && article && article.querySelectorAll) {
 							prefixed = Array.prototype.find.call(article.querySelectorAll('[id]'), function(node) {
-								return node.id && node.id.indexOf(focusTarget + '-') === 0;
+								if (!node.id)
+									return false;
+
+								if (node.id.indexOf(focusTarget + '-') === 0)
+									return true;
+
+								if (!normalizedFocusTarget)
+									return false;
+
+								var normalizedNodeId = node.id
+									.replace(/-{2,}/g, '-')
+									.replace(/^-+|-+$/g, '');
+
+								return normalizedNodeId === normalizedFocusTarget
+									|| normalizedNodeId.indexOf(normalizedFocusTarget + '-') === 0;
 							});
 
 							if (prefixed)
